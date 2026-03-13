@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NexConnect - New Contact Submission Alert</title>
+    <meta name="description" content="Admin alert for a new contact form submission at NexConnect.">
+    <meta property="og:title" content="NexConnect Admin Alert">
+    <meta property="og:description" content="New contact submission notification.">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 65ch;
+            /* ~600px, but adheres to 45-75ch line length constraint */
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #d9534f;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            color: #d9534f;
+            line-height: 1.2;
+            margin-top: 0;
+        }
+
+        .info-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="header">New Contact Submission Alert</h1>
+        <p>A new inquiry has been submitted via the NexConnect website.</p>
+
+        <div class="info-box">
+            <p><span class="label">Name:</span> {{ name }}</p>
+            <p><span class="label">Email:</span> {{ email }}</p>
+        </div>
+
+        <div class="info-box">
+            <p><span class="label">Message:</span></p>
+            <p>{{ message }}</p>
+        </div>
+
+        <p>Please log in to the admin dashboard to review and respond.</p>
+    </div>
+</body>
+
+</html>

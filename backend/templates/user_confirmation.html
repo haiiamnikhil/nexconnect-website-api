@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NexConnect - Thank You for Your Inquiry</title>
+  <meta name="description" content="Confirmation page thanking the user for their NexConnect inquiry.">
+  <meta property="og:title" content="NexConnect - Thank You">
+  <meta property="og:description"
+    content="Thank you for reaching out to NexConnect. Our team will review your message soon.">
+
+  <style>
+    :root {
+      --fluid-text: clamp(14px, 1.5vw, 16px);
+      --fluid-h1: clamp(24px, 3vw, 32px);
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      font-size: var(--fluid-text);
+    }
+
+    .container {
+      max-width: 65ch;
+      margin: 20px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      text-align: center;
+      color: #333333;
+      font-size: var(--fluid-h1);
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    .content {
+      color: #555555;
+      line-height: 1.5;
+    }
+
+    .brand-story {
+      margin-top: 25px;
+      padding: 20px;
+      background: #f9f9f9;
+      border-left: 3px solid #009688;
+      font-size: 0.9em;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      font-size: 0.8em;
+      color: #888888;
+    }
+
+    .trust-signals {
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      font-weight: bold;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="header">Thank You, {{ name }}!</h1>
+    <div class="content">
+      <p>We have received your message and appreciate you reaching out to NexConnect.</p>
+      <p>Our team will review your inquiry and get back to you as soon as possible.</p>
+
+      <div class="brand-story">
+        <strong>About NexConnect:</strong> We build enterprise software that powers HR, sales, operations, and
+        collaboration — plus Trendzo, our fashion delivery app loved by millions. We are committed to simplifying
+        business complexities through centralized platforms.
+      </div>
+      <br>
+      <p>Best Regards,</p>
+      <p><strong>The NexConnect Team</strong></p>
+    </div>
+    <div class="footer">
+      <div class="trust-signals">
+        <span>✓ SOC 2 Certified</span>
+        <span>✓ 99.99% Uptime</span>
+        <span>✓ 24/7 Support</span>
+      </div>
+      <p>&copy; 2026 NexConnect. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+
+</html>

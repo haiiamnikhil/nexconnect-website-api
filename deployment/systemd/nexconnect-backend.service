@@ -1,0 +1,35 @@
+[Unit]
+Description=NexConnect FastAPI Backend (Gunicorn + Uvicorn workers)
+After=network.target postgresql.service
+
+[Service]
+User=ubuntu
+Group=www-data
+
+# Run from the API repo root so "backend.main:app" resolves correctly
+WorkingDirectory=/home/ubuntu/nexconnect-api
+
+# Load environment variables from .env
+EnvironmentFile=/home/ubuntu/nexconnect-api/backend/.env
+
+# Path to venv binaries
+Environment="PATH=/home/ubuntu/nexconnect-api/backend/venv/bin"
+
+# 4 Uvicorn workers — tune to (2 * vCPUs) + 1
+ExecStart=/home/ubuntu/nexconnect-api/backend/venv/bin/gunicorn \
+    backend.main:app \
+    --workers 4 \
+    --worker-class uvicorn.workers.UvicornWorker \
+    --bind 127.0.0.1:8000 \
+    --access-logfile - \
+    --error-logfile -
+
+Restart=always
+RestartSec=5
+
+# View logs: journalctl -u nexconnect-backend -f
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
