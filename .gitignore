@@ -18,5 +18,9 @@ backend/.env
 .DS_Store
 Thumbs.db
 
-# Logs
+# Windows / PowerShell
 *.log
+*.err
+*.TMP
+*.tmp
+nssm.ext
